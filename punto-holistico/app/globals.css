@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Punto Holístico Consciente — landing personal de Alfredo Ramírez.
+   Paleta cálida y terrosa, tipografía grande y expresiva (Fraunces + Work Sans).
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --bg: #f6ede0;
+  --surface: #efe2cb;
+  --ink: #241c11;
+  --gray: #5b4c38;
+  --faint: #8c7a5c;
+  --border: #ddccab;
+  --border-strong: #c7b083;
+  --terracotta: #b5623c;
+  --gold: #a9812f;
+  --green: #4f5c3f;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  color-scheme: light;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-work-sans), system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--terracotta); color: #fdf6ec; }
+
+a:focus-visible, button:focus-visible {
+  outline: 1px solid var(--terracotta);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.serif { font-family: var(--font-fraunces), Georgia, serif; }
+
+/* ── Type scale ────────────────────────────────────────────────────────────── */
+
+.name {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(52px, 8.5vw, 108px);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.h-section {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(30px, 3.4vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.h-card {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.lead {
+  font-size: clamp(19px, 1.8vw, 23px);
+  line-height: 1.55;
+  color: var(--gray);
+}
+
+.quote {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.label {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.idx {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.meta {
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: var(--faint);
+}
+
+.tag {
+  font-size: 13.5px;
+  color: var(--gray);
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  padding: 5px 14px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--bg) 60%, #fff);
+}
+
+@media (max-width: 767px) {
+  .h-section { font-size: 28px; }
+  .h-card { font-size: 21px; }
+  .lead { font-size: 18px; }
+  .quote { font-size: 21px; }
+}
+
+/* ── Components ────────────────────────────────────────────────────────────── */
+
+.btn {
+  font-family: var(--font-work-sans), sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 26px;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: border-color 150ms var(--ease), background 150ms var(--ease), color 150ms var(--ease);
+}
+.btn:hover { background: var(--ink); color: var(--bg); }
+
+.btn-solid { background: var(--terracotta); color: #fdf6ec; border-color: var(--terracotta); }
+.btn-solid:hover { background: #9c5231; border-color: #9c5231; color: #fdf6ec; }
+
+.u {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--border-strong);
+  transition: text-decoration-color 150ms var(--ease);
+}
+.u:hover { text-decoration-color: var(--terracotta); }
+
+.dim { color: var(--gray); transition: color 150ms var(--ease); }
+.dim:hover { color: var(--terracotta); }
+
+.rule { border-top: 1px solid var(--border); }
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg) 55%, #fff);
+}
+
+/* Decorative rings, echo "punto" / "umbral" */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  pointer-events: none;
+}
+
+/* ── Motion ────────────────────────────────────────────────────────────────── */
+
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 600ms var(--ease) both; }
+
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+.row-hover { transition: background 160ms var(--ease), padding-left 160ms var(--ease); }
+.row-hover:hover { background: var(--surface); padding-left: 14px; border-radius: 6px; }
+
+.nav-on { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .row-hover:hover { padding-left: 0; }
+}
