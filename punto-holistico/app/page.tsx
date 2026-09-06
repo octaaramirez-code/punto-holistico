@@ -261,7 +261,7 @@ export default function Home() {
               {profile.phones.map((ph) => (
                 <div key={ph.country} className="rule py-4">
                   <p className="meta mb-1.5">{ph.type === 'whatsapp' ? 'WhatsApp' : 'Teléfono'} — {ph.country}</p>
-                  
+                  <a
                     href={ph.href}
                     {...(ph.type === 'whatsapp' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="u text-[17px]"
