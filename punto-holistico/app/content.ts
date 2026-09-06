@@ -14,8 +14,8 @@ export const profile = {
 
   email: 'twdefensa100@gmail.com',
   phones: [
-    { country: 'Argentina', display: '+54 9 2974 75-4587', whatsapp: 'https://wa.me/5492974754587' },
-    { country: 'España', display: '+34 673 028 697', whatsapp: 'https://wa.me/34673028697' },
+    { country: 'Argentina', display: '+54 9 2974 75-4587', type: 'whatsapp' as const, href: 'https://wa.me/5492974754587' },
+    { country: 'España', display: '+34 673 028 697', type: 'phone' as const, href: 'tel:+34673028697' },
   ],
 
   // Actualizar una vez deployado en Vercel.
